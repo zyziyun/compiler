@@ -1,7 +1,7 @@
 # compiler
 base on https://github.com/thejameskyle/the-super-tiny-compiler/blob/master/the-super-tiny-compiler.js
 
-##babel是一个compiler
+## babel是一个compiler
 - 简单的编译器：https://github.com/thejameskyle/the-super-tiny-compiler
 - 编译器三个阶段：
 	- parsing
