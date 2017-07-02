@@ -17,7 +17,6 @@ base on https://github.com/thejameskyle/the-super-tiny-compiler/blob/master/the-
 		- Traversal、traverse 遍历、转换，操纵节点，深度优先遍历
 			- visitor：NumberLiteral(node, parent)
 			- enter/exit
-			- ![Alt text](./1498896147020.png)
 	- generation
 		- 有一些重复的转换过程
 		- 生成一个大的字符串
