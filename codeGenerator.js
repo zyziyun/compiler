@@ -1,5 +1,4 @@
 function codeGenerator (node) {
-    debugger
     switch (node.type) {
         case 'Program':
             return node.body.map(codeGenerator).join('\n');
