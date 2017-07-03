@@ -1,6 +1,5 @@
 function parser (tokens) {
     let current = 0;
-
     function walk () {
         let token = tokens[current];
         // 数字节点
@@ -52,3 +51,5 @@ function parser (tokens) {
     }
     return ast;
 }
+
+module.exports = parser;

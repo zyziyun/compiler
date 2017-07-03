@@ -33,3 +33,5 @@ function traverser (ast, visitor) {
     // start
     traverseNode(ast, null); 
 }
+
+module.exports = traverser;

@@ -3,8 +3,7 @@ function tokenizer (input) {
     let tokens = [];
     while (current < input.length) {
         let char = input[current];
-        // 括号匹配 - start
-        if (char === '(') {
+        if (char === '(') {// 括号匹配 - start
             tokens.push({
                 type: 'paren',
                 value: '('
@@ -12,8 +11,7 @@ function tokenizer (input) {
             current++;
             continue;
         }
-        // 括号匹配 - end
-        if (char === ')') {
+        if (char === ')') {// 括号匹配 - end
             tokens.push({
                 type: 'paren',
                 value: ')'
@@ -21,14 +19,12 @@ function tokenizer (input) {
             current++;
             continue;
         }
-        // 空格匹配 - 刨除在外
-        let WHITESPACE = /\s/;
+        let WHITESPACE = /\s/;// 空格匹配 - 刨除在外
         if (WHITESPACE.test(char)) {
             current++;
             continue;
         }
-        // 数字连续匹配
-        let NUMBERS = /[0-9]/;
+        let NUMBERS = /[0-9]/;// 数字连续匹配
         if (NUMBERS.test(char)) {
             let value = '';
             while (NUMBERS.test(char)) {
@@ -41,8 +37,7 @@ function tokenizer (input) {
             });
             continue;
         }
-        // 匹配内部字符串
-        if (char === '"') {
+        if (char === '"') {// 匹配内部字符串
             let value = '';
             char = input[++current];
             while (char !== '"') {
@@ -56,8 +51,7 @@ function tokenizer (input) {
             });
             continue;
         }
-        // 匹配变量名
-        let LETTERS = /[a-z]/i;
+        let LETTERS = /[a-z]/i;// 匹配内部字符串
         if (LETTERS.test(char)) {
             let value = '';
             while (LETTERS.test(char)) {
@@ -70,9 +64,12 @@ function tokenizer (input) {
             });
             continue;
         }
-        throw new TypeError('I dont know what this character is: ' + char);
+        throw new TypeError(
+            'I dont know what this character is: '
+             + char
+        );
     }
     return tokens;
 }
 
-// export default tokenizer;
+module.exports = tokenizer;

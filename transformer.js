@@ -1,11 +1,10 @@
+var traverser = require('./traverser.js');
 function transformer (ast) {
     let newAst = {
         type: 'Program',
         body: []
     };
-    // debugger
     ast._context = newAst.body;
-
     traverser(ast, {
         NumberLiteral: {
             enter (node, parent) {
@@ -46,3 +45,5 @@ function transformer (ast) {
     });
     return newAst;
 }
+
+module.exports = transformer;

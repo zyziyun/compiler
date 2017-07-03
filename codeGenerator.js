@@ -24,3 +24,4 @@ function codeGenerator (node) {
             throw new TypeError(node.type);  
     }
 }
+module.exports = codeGenerator;
